@@ -1,0 +1,7 @@
+.pagination {
+  @apply w-11/12 mx-auto my-12 flex justify-between;
+
+  button {
+    @apply py-3 px-8 rounded-xl bg-gray-300 hover:bg-gray-400;
+  }
+}

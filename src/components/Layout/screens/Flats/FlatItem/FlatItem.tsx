@@ -14,7 +14,13 @@ export const FlatItem: FC<IFlat> = ({
 }) => {
 	return (
 		<div className={styles.flat_item}>
-			<Image src={layout_image} width={120} height={120} alt={'Floor plan'} />
+			<Image
+				src={layout_image}
+				width={120}
+				height={120}
+				alt={'Floor plan'}
+				priority
+			/>
 			<h3>Floor: {floor}</h3>
 			<h3>Rooms: {rooms}</h3>
 			<h3>Price: {price}</h3>
