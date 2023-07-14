@@ -1,20 +1,7 @@
 .navbar {
-  @apply px-[10%] h-16 flex justify-between items-center bg-gray-400;
+  @apply px-[10%] h-16 flex items-center bg-gray-400;
+
   h2 {
     @apply text-xl font-bold;
-  }
-  .floors {
-    @apply relative;
-    
-    h2 {
-      @apply cursor-pointer;;
-    }
-
-    ol {
-      @apply absolute top-11 w-full;
-      li {
-        @apply h-8 flex justify-center items-center text-white font-medium bg-gray-500; 
-      }
-    }
   }
 }

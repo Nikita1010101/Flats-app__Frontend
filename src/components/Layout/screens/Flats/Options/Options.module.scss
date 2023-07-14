@@ -1,3 +1,17 @@
 .options {
   @apply my-14;
+
+  .sorting {
+    ol {
+      //@apply ;
+
+      li {
+        //@apply ;
+        &:first-child {
+          @apply font-semibold;
+        }
+      }
+
+    }
+  }
 }

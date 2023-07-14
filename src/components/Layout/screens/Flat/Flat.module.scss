@@ -1,0 +1,26 @@
+.flat {
+  @apply flex flex-col items-center; 
+
+  .image {
+    @apply mt-14 px-40 flex justify-center items-center border-[3px] border-gray-400 rounded-lg shadow-md;
+  }
+
+  table {
+    @apply w-8/12 my-14 shadow-md;
+    thead {
+      tr {
+        th {
+          @apply h-10;
+        }
+      }
+    }
+
+    tbody {
+      tr {
+        td {
+          @apply w-1/2 h-10 text-center border-2 border-gray-300;
+        }
+      }
+    }
+  }
+}
