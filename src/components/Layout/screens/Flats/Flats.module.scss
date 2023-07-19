@@ -1,1 +1,7 @@
+.flats {
+  @apply text-center;
 
+  > h2 {
+    @apply text-2xl font-semibold;
+  }
+}

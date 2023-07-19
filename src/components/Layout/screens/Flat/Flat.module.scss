@@ -2,11 +2,12 @@
   @apply flex flex-col items-center; 
 
   .image {
-    @apply mt-14 px-40 flex justify-center items-center border-[3px] border-gray-400 rounded-lg shadow-md;
+    @apply mt-14 flex justify-center items-center border-[3px] border-gray-400 rounded-lg shadow-md lg:px-40;
   }
 
   table {
-    @apply w-8/12 my-14 shadow-md;
+    @apply w-full my-14 shadow-md lg:w-3/4;
+    
     thead {
       tr {
         th {

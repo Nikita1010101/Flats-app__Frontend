@@ -1,9 +1,9 @@
 import { FC } from 'react'
+import Link from 'next/link'
 import Image from 'next/image'
 import styles from './FlatItem.module.scss'
 
-import { IFlat } from 'types/flat.interface'
-import Link from 'next/link'
+import { IFlat } from 'types/flat.type'
 
 export const FlatItem: FC<IFlat> = ({
 	layout_image,

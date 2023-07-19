@@ -1,11 +1,11 @@
 .flat_item {
-  @apply w-4/5 mx-auto mb-5 py-3 px-8 flex justify-between items-center border-2 border-black rounded-lg shadow-md;
+  @apply w-4/5 mx-auto mb-5 py-3 px-8 flex flex-col justify-between items-center border-2 border-black rounded-lg shadow-md lg:flex-row;
   
   h3 {
-    @apply text-lg font-medium;
+    @apply mb-5 text-lg font-medium lg:mb-0;
   }
 
   a {
-    @apply py-2 px-8 font-medium bg-gray-400 rounded-xl transition hover:bg-gray-500;
+    @apply py-2 px-8 mb-5 font-medium bg-gray-400 rounded-xl transition hover:bg-gray-500 lg:mb-0;
   }
 }

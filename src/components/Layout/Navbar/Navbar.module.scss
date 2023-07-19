@@ -1,5 +1,5 @@
 .navbar {
-  @apply px-[10%] h-16 flex items-center bg-gray-400;
+  @apply px-[10%] h-16 flex justify-between items-center bg-gray-400;
 
   h2 {
     @apply text-xl font-bold;

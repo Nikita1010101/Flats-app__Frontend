@@ -1,5 +1,5 @@
 export interface IQueryParams {
 	current_page: number
-	sort_key: string
-	sort_value: string
+	sort_name: string
+	sort_type: string
 }

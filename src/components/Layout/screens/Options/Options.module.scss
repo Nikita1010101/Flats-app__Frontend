@@ -1,0 +1,27 @@
+.options {
+	@apply my-14;
+
+	.btns {
+		@apply w-full mx-auto mt-24 flex flex-col justify-between items-center sm:flex-row lg:w-3/5;
+
+		.advanced_settings {
+			@apply w-28 h-14 mb-16 p-2 flex justify-start bg-gray-200 rounded-full transition sm:mb-0;
+
+			.switch {
+				@apply w-10 h-10 bg-gray-600 rounded-full cursor-pointer transition hover:bg-gray-500;
+			}
+
+			&.active {
+				@apply justify-end bg-gray-600;
+
+        .switch {
+          @apply bg-gray-200 transition hover:bg-gray-300;
+        }
+			}
+		}
+
+    .submit {
+      @apply py-3 px-8 font-medium bg-gray-400 rounded-2xl transition hover:bg-gray-500;
+    }
+	}
+}

@@ -3,8 +3,9 @@ import { ParsedUrlQuery } from 'querystring'
 
 import { IFlatPage } from '@/components/Layout/screens/Flat/Flat.interface'
 import { Flat } from '@/components/Layout/screens/Flat/Flat'
+
+import { IFlat } from 'types/flat.type'
 import { FlatService } from 'services/flat.service'
-import { IFlat } from 'types/flat.interface'
 
 const FlatPage: NextPage<IFlatPage> = ({ flat }) => {
 	return <Flat {...flat} />
@@ -31,6 +32,7 @@ export const getStaticPaths: GetStaticPaths<IParams> = async () => {
 			fallback: 'blocking'
 		}
 	} catch (error) {
+		console.log(error)
 		throw error
 	}
 }
@@ -44,6 +46,7 @@ export const getStaticProps: GetStaticProps = async ({ params }) => {
 			revalidate: 600
 		}
 	} catch (error) {
+		console.log(error)
 		throw error
 	}
 }

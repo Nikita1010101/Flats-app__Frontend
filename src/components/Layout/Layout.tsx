@@ -1,6 +1,7 @@
 import { FC, PropsWithChildren } from 'react'
 import Head from 'next/head'
 import styles from './Layout.module.scss'
+
 import { ILayout } from './Layout.interface'
 import { Navbar } from './Navbar/Navbar'
 

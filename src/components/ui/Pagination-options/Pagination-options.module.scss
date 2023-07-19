@@ -1,8 +1,8 @@
 .pagination {
-	@apply w-11/12 mx-auto my-12 flex justify-between;
+	@apply my-12 flex justify-between;
 
 	.btn {
-		@apply py-3 px-8 rounded-xl bg-gray-400 transition;
+		@apply py-2 px-5 rounded-xl bg-gray-400 transition sm:py-3 sm:px-8;
 
 		&.active {
 			@apply hover:bg-gray-500;
@@ -10,9 +10,18 @@
 	}
 
 	.pagination_btns {
-		@apply w-1/2 flex justify-center items-center;
+		@apply hidden w-1/2 justify-center items-center lg:flex;
+	}
 
-		.dots {
+	.pagination_info {
+		@apply flex lg:hidden items-center;
+
+		h3 {
+			@apply mx-3 text-xl font-medium;
+		}
+
+		span {
+			@apply text-lg;
 		}
 	}
 }
