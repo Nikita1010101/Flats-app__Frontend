@@ -7,19 +7,16 @@ import { IUseFlats } from 'types/hook.type'
 import { useTypedSelector } from './use-typed-selector'
 import { useActions } from './use-actions'
 import { FlatService } from 'services/flat.service'
-import { createQueryParams } from 'utils/create-query-params'
+import { useQueryParams } from './use-query-params'
 
 export const useFilters = (): IUseFlats => {
-	const {
-		filters_body,
-		query_params: { current_page, sort_name, sort_type }
-	} = useTypedSelector(state => state)
+	const { current_page, sort_name, sort_type, ...filters_params } =
+		useTypedSelector(state => state.query_params)
 	const { getFlatsCount } = useActions()
-
-	const query_params = createQueryParams(current_page, sort_name, sort_type)
+	const { filters_query_params, filters_count_query_params } = useQueryParams()
 
 	const queryKeys: readonly unknown[] = [
-		filters_body,
+		filters_params,
 		current_page,
 		sort_name,
 		sort_type
@@ -31,13 +28,13 @@ export const useFilters = (): IUseFlats => {
 		IFlat[],
 		readonly unknown[]
 	>({
-		queryKey: ['filters-flats', ...queryKeys],
-		queryFn: () => FlatService.getfilteredFlats(query_params, filters_body),
+		queryKey: ['flats', ...queryKeys],
+		queryFn: () => FlatService.getAllFlats(filters_query_params),
 		select: ({ data }) => data
 	})
 
 	if (typeof window !== 'undefined') {
-		getFlatsCount(filters_body)
+		getFlatsCount(filters_count_query_params)
 	}
 
 	return { flats, is_loading }

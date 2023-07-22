@@ -8,7 +8,7 @@ import { Layout } from '../../Layout'
 import { SortOptions } from './Sort-options/Sort-options'
 import { FilterOption } from './Filter-option/Filter-option'
 
-import { IFilters } from 'types/filter.type'
+import { IFilters } from 'types/query.type'
 import { useActions } from 'hooks/use-actions'
 import { useTypedSelector } from 'hooks/use-typed-selector'
 import {
@@ -19,16 +19,16 @@ import {
 export const Options: FC = () => {
 	const [is_advanced_settings, set_advanced_settings] = useState<boolean>(false)
 	const { replace } = useRouter()
-	const { filters_body } = useTypedSelector(state => state)
-	const { changeFiltersBody, changePage } = useActions()
+	const query_params = useTypedSelector(state => state.query_params)
+	const { changeFilters, changePage } = useActions()
 	const { register, handleSubmit } = useForm<IFilters>({
-		defaultValues: filters_body
+		defaultValues: query_params
 	})
 
 	const onSubmit: SubmitHandler<IFilters> = data => {
 		changePage(1)
-		changeFiltersBody(data)
-		replace('/filters-results')
+		changeFilters(data)
+		replace('/filter-results')
 	}
 
 	return (

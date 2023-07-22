@@ -1,4 +1,4 @@
-import { EOptions } from 'types/filter.type'
+import { EOptions } from 'types/query.type'
 import { IFilterOption } from './Filter-option.interface'
 
 export const mainFilterOptions: Omit<IFilterOption, 'register'>[] = [

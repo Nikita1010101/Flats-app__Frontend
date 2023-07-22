@@ -1,13 +1,12 @@
 import { createAsyncThunk } from '@reduxjs/toolkit'
 
-import { IFilters } from 'types/filter.type'
 import { FlatService } from 'services/flat.service'
 
-export const getFlatsCount = createAsyncThunk<string, IFilters>(
+export const getFlatsCount = createAsyncThunk<string, string>(
 	'flats/count',
-	async (body: IFilters) => {
+	async (filter_params: string) => {
 		try {
-			const { data: flats_count } = await FlatService.getCount(body)
+			const { data: flats_count } = await FlatService.getCount(filter_params)
 			return flats_count
 		} catch (error) {
 			throw error

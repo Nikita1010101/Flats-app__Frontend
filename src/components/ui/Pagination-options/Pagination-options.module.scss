@@ -2,7 +2,7 @@
 	@apply my-12 flex justify-between;
 
 	.btn {
-		@apply py-2 px-5 rounded-xl bg-gray-400 transition sm:py-3 sm:px-8;
+		@apply py-2 px-5 rounded-xl bg-gray-400 font-bold transition sm:py-3 sm:px-8 sm:text-xl;
 
 		&.active {
 			@apply hover:bg-gray-500;

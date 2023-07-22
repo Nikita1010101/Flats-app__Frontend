@@ -3,20 +3,17 @@ import { useQuery } from '@tanstack/react-query'
 
 import { IFlat } from 'types/flat.type'
 import { IUseFlats } from 'types/hook.type'
-import { createQueryParams } from 'utils/create-query-params'
 import { useTypedSelector } from './use-typed-selector'
 import { useActions } from './use-actions'
 import { FlatService } from 'services/flat.service'
-
-import { initialState as bodyInitialState } from '@/store/slices/filters-body/filters-body.slice'
+import { useQueryParams } from './use-query-params'
 
 export const useAllFlats = (): IUseFlats => {
-	const {
-		query_params: { current_page, sort_name, sort_type }
-	} = useTypedSelector(state => state)
+	const { current_page, sort_name, sort_type } = useTypedSelector(
+		state => state.query_params
+	)
 	const { getFlatsCount } = useActions()
-
-	const query_params = createQueryParams(current_page, sort_name, sort_type)
+	const { query_params, count_query_params } = useQueryParams()
 
 	const queryKeys: readonly unknown[] = [current_page, sort_name, sort_type]
 
@@ -32,7 +29,7 @@ export const useAllFlats = (): IUseFlats => {
 	})
 
 	if (typeof window !== 'undefined') {
-		getFlatsCount(bodyInitialState)
+		getFlatsCount(count_query_params)
 	}
 
 	return { flats, is_loading }

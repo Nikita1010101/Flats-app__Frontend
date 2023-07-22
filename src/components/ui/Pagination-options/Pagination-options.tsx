@@ -23,6 +23,7 @@ export const PaginationOptions: FC = () => {
 				onClick={() => changePage(current_page - 1)}
 				className={cn(styles.btn, { [styles.active]: current_page !== 1 })}
 				disabled={current_page === 1}
+				title={current_page === 1 ? 'This is the first page' : 'Prev page'}
 			>
 				{'<'}
 			</button>
@@ -50,6 +51,11 @@ export const PaginationOptions: FC = () => {
 					[styles.active]: current_page !== pages_total_count
 				})}
 				disabled={current_page === pages_total_count}
+				title={
+					current_page === pages_total_count
+						? 'This is the last page'
+						: 'Next page'
+				}
 			>
 				{'>'}
 			</button>

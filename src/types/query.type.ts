@@ -1,3 +1,8 @@
+export interface ISort {
+	sort_name: string
+	sort_type: string
+}
+
 export interface IFilters {
 	floor_from: number
 	floor_to: number
@@ -12,6 +17,8 @@ export interface IFilters {
 	price_from: number
 	price_to: number
 }
+
+export type TQueryParams = { current_page: number } & ISort & IFilters
 
 export enum EOptions {
 	floor_from = 'floor_from',

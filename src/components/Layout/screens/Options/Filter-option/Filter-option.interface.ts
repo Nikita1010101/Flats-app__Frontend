@@ -1,6 +1,6 @@
 import { UseFormRegister } from 'react-hook-form'
 
-import { EOptions, IFilters } from 'types/filter.type'
+import { EOptions, IFilters } from 'types/query.type'
 
 export interface IFilterValidateOptions {
 	min: number
